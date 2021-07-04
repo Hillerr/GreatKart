@@ -21,6 +21,7 @@ class MyAccountManager(BaseUserManager):
 
         user.set_password(password)
         user.save(using=self._db)
+        user.is_active = True
         return user 
 
     def create_superuser(self, first_name, last_name, email, username, password):
@@ -40,11 +41,11 @@ class MyAccountManager(BaseUserManager):
         return user
 
 class Account(AbstractBaseUser):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    username = models.CharField(max_length=50, unique=True)
+    first_name = models.CharField('Primeiro nome', max_length=50)
+    last_name = models.CharField('Último nome', max_length=50)
+    username = models.CharField('Nome de usuário', max_length=50, unique=True)
     email = models.EmailField(max_length=50, unique=True)
-    phone_number = models.CharField(max_length=50)
+    phone_number = models.CharField('Número de telefone', max_length=50)
 
 
     #required
