@@ -65,9 +65,7 @@ class OrderProduct(models.Model):
     payment = models.ForeignKey(Payment, on_delete=models.SET_NULL, blank=True, null=True)
     user = models.ForeignKey(Account, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    variation = models.ForeignKey(Variation, on_delete=models.CASCADE)
-    color = models.CharField(max_length=50, null=True)
-    size = models.CharField(max_length=50, null=True)
+    variations = models.ManyToManyField(Variation, blank=True)
     quantity = models.IntegerField()
     product_price = models.DecimalField(max_digits=8, decimal_places=2)
     ordered = models.BooleanField(default=False)
@@ -75,5 +73,5 @@ class OrderProduct(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return self.product.product_price
+        return self.product.__str__()
 
