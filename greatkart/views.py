@@ -1,13 +1,7 @@
 from category.models import Category
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import redirect
 from store.models import Product
+from store import urls
 
 def home(request):
-
-    products = Product.objects.all().filter(is_available=True)
-
-    context = {
-        'products': products
-    }
-
-    return render(request, 'index.html', context=context)
+    return redirect('store')
