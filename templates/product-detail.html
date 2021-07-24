@@ -75,29 +75,73 @@
 		<div class="row">
 			<div class="col-md-9">
 
+				<form action="{% url 'submit_review' single_product.id %}" method="post">
+					{% csrf_token %}
+					<h5>Escreva sua opinião</h5>
+					<div>
+						<!-- Rating stars -->
+						<label>Como você avalia este produto?</label><br>
+						<div class="rate">
+							<input type="radio" id="star5" name="rating" value="5" />
+							<label for="star5" title="text">5 stars</label>
+							<input type="radio" id="star4" name="rating" value="4" />
+							<label for="star4" title="text">4 stars</label>
+							<input type="radio" id="star3" name="rating" value="3" />
+							<label for="star3" title="text">3 stars</label>
+							<input type="radio" id="star2" name="rating" value="2" />
+							<label for="star2" title="text">2 stars</label>
+							<input type="radio" id="star1" name="rating" value="1" />
+							<label for="star1" title="text">1 star</label>
+						  </div>
+						  <br><br><br>
+						Título da opinião:
+						<input type="text" class="form-control" name="subject" required>
+						<br>
+						Sua opinião: <br>
+						<textarea name="review" rows="4" placeholder="Sua opinião" class="form-control"></textarea>
+						<br>
+						{% if user.is_authenticated %}
+						  {% if orderproduct %}
+							<input type="submit" value="Enviar opinião" class="btn btn-primary">
+						  {% else %}
+						  	<p>Compre este produto para postar a sua opinião.</p>
+						  {% endif %}
+						{% else %}
+						<p>Acesse a sua conta para avaliar o produto. <span><a href="{% url 'login' %}">Entrar</a></span></p>
+						{% endif %}
+					</div>
+					{% include 'includes/alerts.html' %}
+				</form>
+				<br>
+
 				<header class="section-heading">
-					<h3>Customer Reviews </h3>
+					<h3>Opiniões sobre {{single_product.product_name}}</h3>
 
 				</header>
 
+				{% for review in reviews %}
 				<article class="box mb-3">
 					<div class="icontext w-100">
-						<img src="./images/avatars/avatar1.jpg" class="img-xs icon rounded-circle">
 						<div class="text">
-							<span class="date text-muted float-md-right">24.04.2020 </span>
-							<h6 class="mb-1">Mike John </h6>
-
+							<span class="date text-muted float-md-right">{{review.updated_at}}</span>
+							<h6 class="mb-1">{{review.user.full_name}} </h6>
+							<span>
+								<i class="fa fa-star{% if review.rating < 1 %}-o {% endif %}"></i>
+								<i class="fa fa-star{% if review.rating < 2 %}-o {% endif %}"></i>
+								<i class="fa fa-star{% if review.rating < 3 %}-o {% endif %}"></i>
+								<i class="fa fa-star{% if review.rating < 4 %}-o {% endif %}"></i>
+								<i class="fa fa-star{% if review.rating < 5 %}-o {% endif %}"></i>
+							</span>
 						</div>
 					</div> <!-- icontext.// -->
 					<div class="mt-3">
+						<h6>{{review.subject}}</h6>
 						<p>
-							Dummy comment Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip
+							{{review.review}}
 						</p>
 					</div>
 				</article>
-
+				{% endfor %}
 
 
 			</div> <!-- col.// -->
