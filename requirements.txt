@@ -1,7 +1,7 @@
 asgiref==3.2.10
 certifi==2021.5.30
 chardet==4.0.0
-Django==3.1
+Django>=3.1.12
 django-admin-thumbnails==0.2.6
 django-session-timeout==0.1.0
 idna==2.10
