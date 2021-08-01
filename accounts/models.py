@@ -41,6 +41,10 @@ class MyAccountManager(BaseUserManager):
         return user
 
 class Account(AbstractBaseUser):
+    class Meta:
+        verbose_name = "Conta"
+        verbose_name_plural = "Contas"
+
     first_name = models.CharField('Primeiro nome', max_length=50)
     last_name = models.CharField('Último nome', max_length=50)
     username = models.CharField('Nome de usuário', max_length=50, unique=True)
@@ -64,6 +68,9 @@ class Account(AbstractBaseUser):
     def __str__(self) -> str:
         return self.email
 
+    def __repr__(self) -> str:
+        return self.email
+
     def full_name(self):
         return f"{self.first_name} {self.last_name}"
 
@@ -72,3 +79,27 @@ class Account(AbstractBaseUser):
 
     def has_module_perms(self, add_label):
         return True
+
+
+class UserProfile(models.Model):
+    class Meta:
+        verbose_name = "Perfil de Usuário"
+        verbose_name_plural = "Perfis de Usuário"
+
+    user = models.OneToOneField(Account, on_delete=models.CASCADE)
+    address = models.CharField(max_length=50, blank=True)
+    zip_code = models.CharField(max_length=15, blank=True)
+    complement = models.CharField(max_length=20, blank=True)
+    country = models.CharField(max_length=50, blank=True)
+    state = models.CharField(max_length=50, blank=True)
+    city = models.CharField(max_length=50, blank=True)
+
+    def __str__(self) -> str:
+        return self.user.first_name
+
+
+    def full_address(self):
+        if self.complement != '':
+            return f"{self.address}, {self.complement}"
+        else:
+            return f"{self.address}"

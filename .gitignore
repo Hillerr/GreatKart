@@ -2,4 +2,5 @@ env
 *.log
 *.pot
 *.pyc
+.env
 __pycache__/

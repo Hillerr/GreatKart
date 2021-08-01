@@ -144,14 +144,19 @@
 				<div class="fix-height">
 					<a href="{{product.get_url}}" class="title">{{product.product_name}}</a>
 					<div class="price-wrap mt-2">
-						<span class="price">${{product.price}}</span>
-						<del class="price-old">$1980</del>
+						<span>
+							<i class="fa fa-star{% if single_product.average_review < 0.5 %}-o{% elif single_product.average_review >= 0.5 and single_product.average_review < 1%}-half-o {% endif %}"></i>
+							<i class="fa fa-star{% if single_product.average_review < 1.5 %}-o{% elif single_product.average_review >= 1.5 and single_product.average_review < 2%}-half-o {% endif %}"></i>
+							<i class="fa fa-star{% if single_product.average_review < 2.5 %}-o{% elif single_product.average_review >= 2.5 and single_product.average_review < 3%}-half-o {% endif %}"></i>
+							<i class="fa fa-star{% if single_product.average_review < 3.5 %}-o{% elif single_product.average_review >= 3.5 and single_product.average_review < 4%}-half-o {% endif %}"></i>
+							<i class="fa fa-star{% if single_product.average_review < 4.5 %}-o{% elif single_product.average_review >= 4.5 and single_product.average_review < 5%}-half-o {% endif %}"></i>
+						</span>
 					</div> <!-- price-wrap.// -->
 				</div>
 				{% if product.stock <= 0 %}
 				<a href="#" class="btn btn-block btn-light">Avise-me quando estiver disponível</a>
 				{% else %}
-				<a href="{% url 'add_cart' product.id %}" class="btn btn-block btn-primary">Adicionar ao carrinho</a>
+				<a href="{{product.get_url}}" class="btn btn-block btn-primary">R$ {{product.price}}</a>
 				{% endif %}
 			</figcaption>
 		</figure>

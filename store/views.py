@@ -3,7 +3,7 @@ from store.forms import ReviewForm
 from django.core import paginator
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404
-from .models import Product, ReviewRating
+from .models import Product, ProductGallery, ReviewRating, Variation
 from orders.models import OrderProduct
 from category.models import Category
 from carts.models import CartItem
@@ -53,14 +53,30 @@ def product_detail(request, category_slug, product_slug):
             orderproduct = None
     else:
         orderproduct = None
+
+    try:
+        variation = Variation.objects.filter(product_id=single_product.id)
+        variations_category = []
+        for i in variation:
+            if i.variation_category not in variations_category:
+                variations_category.append(i.variation_category) 
+
+    except Variation.DoesNotExist:
+        variation = None
+
     # Get reviews
     reviews = ReviewRating.objects.filter(product_id=single_product.id, status=True)
+
+    # GEt product image gallery
+    product_gallery = ProductGallery.objects.filter(product_id=single_product.id)
 
     context = {
         'single_product': single_product,
         'in_cart': in_cart,
+        'variations_category': variations_category,
         'orderproduct': orderproduct,
-        'reviews': reviews
+        'reviews': reviews,
+        'product_gallery': product_gallery
     }
     
     return render(request, 'product-detail.html', context)
