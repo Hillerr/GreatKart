@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django_session_timeout.middleware.SessionTimeoutMiddleware'
 ]
 
-SESSION_EXPIRE_SECONDS = 60 # one minute
+SESSION_EXPIRE_SECONDS = 6000 # ten minutes
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
 SESSION_TIMEOUT_REDIRECT = 'login'
 
