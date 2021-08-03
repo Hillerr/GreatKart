@@ -11,7 +11,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/django%20versions-3.1-green" alt="Unform" />
-    <img src="https://img.shields.io/github/license/Hillerr/GreatKart" alt="Unform" />
+    <img src="https://img.shields.io/badge/license-MIT-green" alt="Unform" />
 </p>
 
 
@@ -24,7 +24,7 @@
  <a href="#autor">Autor</a>
 </p>
 
-## Objetivo
+# Objetivo
 
 Esta aplicação tem como objetivo explorar alguns dos principais recursos do framework Django, implementando uma e-commerce com algumas características:
 
@@ -39,8 +39,8 @@ Esta aplicação tem como objetivo explorar alguns dos principais recursos do fr
 - Pagamento integrado com Paypal
 
 ## Como utilizar
-
-Para utilizar a aplicação, basta clonar o repositório, instalar os pacotes necessários e iniciar a aplicação:
+---
+Para utilizar a aplicação, clone o repositório, instale os pacotes necessários e inicie a aplicação:
 
 ```shell
 pip install requirements.txt
@@ -50,10 +50,28 @@ pip install requirements.txt
 python manage.py runserver
 ```
 
-Visite a documentação do Django para saber como criar um supe usuário e acesse o url: `/secure_login`. No painel do admininstrador é possível criar produtos, visualizar os pedidos e outros recursos.
+Acesse a url da aplicação:
+
+```
+127.0.0.1:8000/
+```
+
+Para criar um adminstrador e poder acessar as opções de admininstrador, execute o seguinte comando no terminal e siga a instruções que serão impressas:
+
+```shell
+python manage.py createsuperuser
+```
+Após o perfil de adminstrador ter sido criado, acesso o seguinte URL para poder acessar os recursos de admininstrador:
+
+```
+127.0.0.1:8000/secure_login/
+```
+
+Nesta página, você poderá criar categorias de produtos, criar/remover pordutos e muito mais.
+
 
 ## Sreenshots
-
+---
 Página principal da loja:
 
 <p align="center">
@@ -80,3 +98,17 @@ Pedido realizado:
     <img src="screenshots/payment.png" alt="Unform" />
 </p>
 
+## Licença
+---
+MIT © Rafael Hiller
+
+## Autor
+---
+
+
+
+
+Feito por Rafael Hiller 👋🏽 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Rafael-blue?style=flat-square&logo=Linkedin&logoColor=white&link=hhttps://www.linkedin.com/in/rafael-hiller-0aa187133/)](https://www.linkedin.com/in/rafael-hiller-0aa187133/) 
+[![Gmail Badge](https://img.shields.io/badge/-rafael.hillr@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:rafael.hillr@gmail.com)](mailto:rafael.hillr@gmail.com)
