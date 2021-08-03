@@ -18,7 +18,7 @@
 
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
- <a href="#como utilizar">Como utilizar</a> • 
+ <a href="#como-utilizar">Como utilizar</a> • 
  <a href="#sreenshots">Sreenshots</a> • 
  <a href="#licenca">Licença</a> • 
  <a href="#autor">Autor</a>
