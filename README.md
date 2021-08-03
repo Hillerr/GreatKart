@@ -38,7 +38,7 @@ Esta aplicação tem como objetivo explorar alguns dos principais recursos do fr
 - Avalição de produtos
 - Pagamento integrado com Paypal
 
-A Aplicação foi desenvolvida juntamento a um [curso na Udemy](https://www.udemy.com/course/django-ecommerce-project-based-course-python-django-web-development/) com alguns recursos extras. 
+A Aplicação foi desenvolvida com base em um [curso na Udemy](https://www.udemy.com/course/django-ecommerce-project-based-course-python-django-web-development/) com alguns recursos extras. 
 
 ## Como utilizar
 
