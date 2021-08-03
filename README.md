@@ -38,8 +38,10 @@ Esta aplicação tem como objetivo explorar alguns dos principais recursos do fr
 - Avalição de produtos
 - Pagamento integrado com Paypal
 
+A Aplicação foi desenvolvida juntamento a um [curso na Udemy](https://www.udemy.com/course/django-ecommerce-project-based-course-python-django-web-development/) com alguns recursos extras. 
+
 ## Como utilizar
----
+
 Para utilizar a aplicação, clone o repositório, instale os pacotes necessários e inicie a aplicação:
 
 ```shell
@@ -71,7 +73,7 @@ Nesta página, você poderá criar categorias de produtos, criar/remover porduto
 
 
 ## Sreenshots
----
+
 Página principal da loja:
 
 <p align="center">
@@ -99,14 +101,10 @@ Pedido realizado:
 </p>
 
 ## Licença
----
+
 MIT © Rafael Hiller
 
 ## Autor
----
-
-
-
 
 Feito por Rafael Hiller 👋🏽 Entre em contato!
 
