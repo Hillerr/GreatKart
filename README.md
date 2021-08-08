@@ -106,7 +106,6 @@ MIT © Rafael Hiller
 
 ## Autor
 
-Feito por Rafael Hiller 👋🏽 Entre em contato!
+Feito por Rafael Hiller.
 
 [![Linkedin Badge](https://img.shields.io/badge/-Rafael-blue?style=flat-square&logo=Linkedin&logoColor=white&link=hhttps://www.linkedin.com/in/rafael-hiller-0aa187133/)](https://www.linkedin.com/in/rafael-hiller-0aa187133/) 
-[![Gmail Badge](https://img.shields.io/badge/-rafael.hillr@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:rafael.hillr@gmail.com)](mailto:rafael.hillr@gmail.com)
