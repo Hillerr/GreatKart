@@ -5,7 +5,7 @@ Django>=3.1.12
 django-admin-thumbnails==0.2.6
 django-session-timeout==0.1.0
 idna==2.10
-Pillow==8.2.0
+pillow>=8.3.2
 python-decouple==3.4
 pytz==2021.1
 requests==2.25.1
